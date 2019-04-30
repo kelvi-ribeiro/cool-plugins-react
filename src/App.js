@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { render } from 'react-dom';
+import brace from 'brace';
+import AceEditor from 'react-ace';
+ 
+import 'brace/mode/java';
+import 'brace/theme/github';
+ 
+function onChange(newValue) {
+  console.log('change',newValue);
 }
-
-export default App;
+ 
+// Render editor
+render(
+  <AceEditor
+    mode="java"
+    theme="github"
+    onChange={onChange}
+    name="UNIQUE_ID_OF_DIV"
+    editorProps={{$blockScrolling: true}}
+  />,
+  document.getElementById('example')
+);
