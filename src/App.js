@@ -1,23 +1,20 @@
 import React from 'react';
-import { render } from 'react-dom';
-import brace from 'brace';
-import AceEditor from 'react-ace';
+import PropTypes from 'prop-types';
  
-import 'brace/mode/java';
-import 'brace/theme/github';
- 
-function onChange(newValue) {
-  console.log('change',newValue);
+export default class App extends React.Component {
+  render() {
+    return (<h1>Testando package prop-types</h1>)
+  }
 }
  
-// Render editor
-render(
-  <AceEditor
-    mode="java"
-    theme="github"
-    onChange={onChange}
-    name="UNIQUE_ID_OF_DIV"
-    editorProps={{$blockScrolling: true}}
-  />,
-  document.getElementById('example')
-);
+App.propTypes = {
+  // You can declare that a prop is a specific JS primitive. By default, these
+  // are all optional.
+  optionalArray: PropTypes.array.isRequired,
+  optionalBool: PropTypes.bool,
+  optionalFunc: PropTypes.func,
+  optionalNumber: PropTypes.number,
+  optionalObject: PropTypes.object,
+  optionalString: PropTypes.string,
+  optionalSymbol: PropTypes.symbol,
+}
