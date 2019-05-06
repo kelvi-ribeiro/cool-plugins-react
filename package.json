@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-dropzone": "^10.1.4",
     "react-scripts": "3.0.0"
   },
   "scripts": {
@@ -27,8 +28,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "prop-types": "^15.7.2"
   }
 }
